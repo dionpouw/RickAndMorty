@@ -7,8 +7,8 @@ import com.jefflete.rickandmorty.data.network.response.character.CharacterRespon
 import com.jefflete.rickandmorty.data.network.response.character.CharacterResponseLocation
 import com.jefflete.rickandmorty.data.network.response.character.CharacterResponseOrigin
 import com.jefflete.rickandmorty.domain.model.Character
-import com.jefflete.rickandmorty.domain.model.Location
-import com.jefflete.rickandmorty.domain.model.Origin
+import com.jefflete.rickandmorty.domain.model.CharacterLocation
+import com.jefflete.rickandmorty.domain.model.CharacterOrigin
 
 // Mapper: DTO to Domain
 object CharacterDtoMapper {
@@ -20,10 +20,10 @@ object CharacterDtoMapper {
             species = dto.species,
             type = dto.type,
             gender = dto.gender,
-            origin = Origin(
+            origin = CharacterOrigin(
                 dto.origin.name, dto.origin.url
             ),
-            location = Location(dto.location.name, dto.location.url),
+            location = CharacterLocation(dto.location.name, dto.location.url),
             image = dto.image,
             episode = dto.episode,
             url = dto.url,
@@ -97,10 +97,10 @@ object CharacterDomainEntityMapper {
             species = entity.species,
             type = entity.type,
             gender = entity.gender,
-            origin = Origin(
+            origin = CharacterOrigin(
                 entity.origin.name, entity.origin.url
             ),
-            location = Location(
+            location = CharacterLocation(
                 entity.location.name, entity.location.url
             ),
             image = entity.image,
