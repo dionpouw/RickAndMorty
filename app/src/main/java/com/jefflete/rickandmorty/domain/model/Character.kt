@@ -1,7 +1,6 @@
 package com.jefflete.rickandmorty.domain.model
 
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -10,9 +9,9 @@ data class Character(
     val gender: String,
     val species: String,
     val created: String,
-    val origin: Origin,
+    val origin: CharacterOrigin,
     val name: String,
-    val location: Location,
+    val location: CharacterLocation,
     val episode: List<String>,
     val id: Int,
     val type: String,
@@ -21,11 +20,11 @@ data class Character(
 ) : Parcelable
 
 @Parcelize
-data class Origin(
-    @field:SerializedName("name") val name: String, @field:SerializedName("url") val url: String
+data class CharacterOrigin(
+    val name: String, val url: String
 ) : Parcelable
 
 @Parcelize
-data class Location(
-    @field:SerializedName("name") val name: String, @field:SerializedName("url") val url: String
+data class CharacterLocation(
+    val name: String, val url: String
 ) : Parcelable
